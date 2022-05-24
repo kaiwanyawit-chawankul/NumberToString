@@ -4,33 +4,19 @@ namespace NumberToString.Test;
 
 public class NumberToStringTests
 {
-    [Fact]
-    public void ConvertZeroShouldReturnsZero()
+    [Theory]
+    [InlineData("Zero",0)]
+    [InlineData("One",1)]
+    [InlineData("Two",2)]
+    [InlineData("Three",3)]
+    [InlineData("Four",4)]
+    [InlineData("Five",5)]
+    public void ConvertOneDigitsShouldReturnsCorrectly(string expectedValue, int input)
     {
         var sut = new NumberToString();
 
-        var result = sut.Convert(0);
+        var result = sut.Convert(input);
         
-        result.Should().Be("Zero");
-    }
-
-    [Fact]
-    public void ConvertOneShouldReturnsOne()
-    {
-        var sut = new NumberToString();
-
-        var result = sut.Convert(0);
-        
-        result.Should().Be("Zero");
-    }
-
-    [Fact]
-    public void ConvertTwoShouldReturnsTwo()
-    {
-        var sut = new NumberToString();
-
-        var result = sut.Convert(0);
-        
-        result.Should().Be("Zero");
+        result.Should().Be(expectedValue);
     }
 }
