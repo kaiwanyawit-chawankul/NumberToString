@@ -13,9 +13,3 @@ dotnet add ./test/NumberToString.Test/NumberToString.Test.csproj package coverle
 dotnet add ./test/NumberToString.Test/NumberToString.Test.csproj package Moq
 dotnet test /p:CollectCoverage=true
 dotnet run --project ./source/NumberToString/NumberToString.csproj
-
-dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=OpenCover
-reportgenerator -reports:./test/NumberToString.Test/coverage.opencover.xml -targetdir:./cover
-dotnet test --logger "console;verbosity=detailed"
-dotnet test  --logger "html;logfilename=testResults.html"
-
