@@ -16,6 +16,6 @@ dotnet test --logger "console;verbosity=detailed"
 dotnet test  --logger "html;logfilename=testResults.html"
 
 ## create coverage report
-dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=OpenCover
-reportgenerator -reports:./test/NumberToString.Test/coverage.opencover.xml -targetdir:./cover
+ - dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=OpenCover
+ - reportgenerator -reports:./test/NumberToString.Test/coverage.opencover.xml -targetdir:./cover
 
